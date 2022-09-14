@@ -1,0 +1,18 @@
+[package]
+name = "query"
+version = "0.0.0"
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+# TODO I can't even get the local repo to work because of some python.rs error
+rustpython = { path = "../../../RustPython", default-features = false, features = [] }
+rustpython-parser = { path = "../../../RustPython/compiler/parser", default-features = false, features = [] }
+# rustpython = { git = "https://github.com/RustPython/RustPython", rev = "368e47cddb1b231c1cea348779a9ebee4926391c", default-features = false, features = [] }
+# TODO this breaks with a compiler error for some reason
+# rustpython-vm = { git = "https://github.com/RustPython/RustPython", rev = "368e47cddb1b231c1cea348779a9ebee4926391c", default-features = false, features = [] }
+ic-cdk = "0.5.6"
+ic-cdk-macros = "0.5.6"
+getrandom = { version = "0.2.3", features = ["custom"] }
